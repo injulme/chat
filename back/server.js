@@ -9,7 +9,7 @@ const io = socketIo(server);
 app.use(cors());
 
 io.on("connection", (socket) => {
-  console.log("User connected");
+  console.log("User connected", socket.id);
 
   socket.on("message", (message) => {
     console.log("Message:", message);
