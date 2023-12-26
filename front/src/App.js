@@ -51,7 +51,7 @@ function App() {
 
   return (
     <div className="container">
-      {connected ? `접속완료!` : "접속중..."}
+      {connected ? `접속완료! ${user}님 환영합니다.` : "접속중..."}
 
       <div className="container__message">
         {messages.map((message, index) => {
@@ -82,7 +82,7 @@ function App() {
           onChange={(e) => setInputMessage(e.target.value)}
           className="send__input"
           placeholder="메세지를 입력하세요."
-          onKeyDown={enterKeyPress}
+          onKeyUp={enterKeyPress}
         />
         <button onClick={sendMessage} className="send__button">
           전송
